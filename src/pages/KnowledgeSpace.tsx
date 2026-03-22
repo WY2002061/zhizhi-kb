@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { Plus, Edit3, Trash2, Check, X, BookOpen } from 'lucide-react';
+import { Plus, Edit3, Trash2, Check, BookOpen } from 'lucide-react';
 import { useKnowledgeStore } from '../store/knowledgeStore';
-import { useUIStore } from '../store/uiStore';
 import KnowledgeCardComponent from '../components/cards/KnowledgeCard';
 
 const COLLECTION_COLORS = ['#6366F1', '#EC4899', '#10B981', '#F59E0B', '#8B5CF6', '#EF4444', '#06B6D4', '#84CC16'];
@@ -13,7 +12,6 @@ export default function KnowledgeSpace() {
   const addCollection = useKnowledgeStore((s) => s.addCollection);
   const updateCollection = useKnowledgeStore((s) => s.updateCollection);
   const deleteCollection = useKnowledgeStore((s) => s.deleteCollection);
-  const openCardDetail = useUIStore((s) => s.openCardDetail);
 
   const [selectedCol, setSelectedCol] = useState<string | null>(null);
   const [creating, setCreating] = useState(false);

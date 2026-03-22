@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Grid3X3, List, SlidersHorizontal, Search, CheckSquare, Square, Trash2, FolderInput, ShieldAlert, X } from 'lucide-react';
+import { Grid3X3, List, SlidersHorizontal, Search, CheckSquare, Square, Trash2, FolderInput, ShieldAlert } from 'lucide-react';
 import { useKnowledgeStore } from '../store/knowledgeStore';
 import { useUIStore } from '../store/uiStore';
 import KnowledgeCardComponent from '../components/cards/KnowledgeCard';

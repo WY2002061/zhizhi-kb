@@ -37,20 +37,6 @@ export default function PrivacySettings() {
     secret: cards.filter((c) => c.privacyLevel === 'secret').length,
   };
 
-  const handleBatchPrivacy = (level: 'public' | 'private' | 'secret', targetLevel: 'public' | 'private' | 'secret') => {
-    cards
-      .filter((c) => c.privacyLevel === level)
-      .forEach((c) => {
-        updateCard(c.id, { privacyLevel: targetLevel });
-        addAuditLog({
-          action: 'privacy_change',
-          cardId: c.id,
-          cardTitle: c.title,
-          detail: `批量隐私变更：${level} -> ${targetLevel}`,
-        });
-      });
-  };
-
   const handleExportData = () => {
     const data = {
       cards: cards.map(({ content, ...rest }) => ({

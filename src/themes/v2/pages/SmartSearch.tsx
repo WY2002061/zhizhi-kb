@@ -1,7 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Search, Sparkles, Clock, Tag, Filter } from 'lucide-react';
 import { useKnowledgeStore } from '../../../store/knowledgeStore';
-import { useUIStore } from '../../../store/uiStore';
 import KnowledgeCardComponent from '../components/cards/KnowledgeCard';
 
 const EXAMPLE_QUERIES = [
