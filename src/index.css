@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+
+  /* V1 defaults: Warm Beige */
+  --color-primary-50: #FDF8F3;
+  --color-primary-100: #F9EFE5;
+  --color-primary-200: #F0DBC1;
+  --color-primary-300: #E6C49A;
+  --color-primary-400: #DBA96F;
+  --color-primary-500: #CE8D42;
+  --color-primary-600: #B87333;
+  --color-primary-700: #995A2B;
+  --color-primary-800: #7A4725;
+  --color-primary-900: #633B21;
+
+  --color-sidebar: #F5F0E6;
+  --color-sidebar-hover: #EBE4D8;
+  --color-sidebar-active: #CE8D42;
+  --color-sidebar-text: #5C4D43;
+  --color-sidebar-text-active: #FFFFFF;
+
+  --color-theme-bg: #FCFAF8;
+  --color-theme-border: #EAE4D9;
+}
+
+/* ── V2 Morandi overrides ─────────────────────────── */
+[data-theme="v2"] {
+  --color-primary-50: #F3F5F2;
+  --color-primary-100: #E3E8E1;
+  --color-primary-200: #C7D0C3;
+  --color-primary-300: #ABB8A5;
+  --color-primary-400: #8FA087;
+  --color-primary-500: #738869;
+  --color-primary-600: #5E7056;
+  --color-primary-700: #4A5843;
+  --color-primary-800: #374132;
+  --color-primary-900: #252C22;
+
+  --color-sidebar: #FAFAF8;
+  --color-sidebar-hover: #F0EFEB;
+  --color-sidebar-active: #738869;
+  --color-sidebar-text: #70706A;
+  --color-sidebar-text-active: #FFFFFF;
+
+  --color-theme-bg: #F5F4F1;
+  --color-theme-border: #E5E3DE;
+}
+
+[data-theme="v2"] body {
+  color: #3D3B37;
+}
+
+[data-theme="v2"] ::-webkit-scrollbar-thumb {
+  background: #D0CDC6;
+}
+[data-theme="v2"] ::-webkit-scrollbar-thumb:hover {
+  background: #B8B5AE;
+}
+
+/* ── Base resets ──────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-theme-bg);
+  color: #3C332A;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D6CEC3;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BDB4A7;
+}
+
+/* ── Animations ──────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn  { animation: fadeIn  0.3s ease-out forwards; }
+.animate-slideIn { animation: slideIn 0.3s ease-out forwards; }
+.animate-scaleIn { animation: scaleIn 0.2s ease-out forwards; }
